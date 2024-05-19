@@ -1,0 +1,152 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    margin: 0;
+    color: #06011d;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('avatar.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(5px);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.sidebar {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: #06011d;
+    border: 2px solid rgb(15, 9, 210);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #444;
+    box-shadow: 0 0 10px rgb(15, 9, 210);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: 2px solid rgb(15, 9, 210);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cell:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 10px rgb(15, 9, 210);
+}
+
+.cell.x::before {
+    content: "X";
+    color: rgb(15, 9, 210);
+    text-shadow: 0 0 10px rgb(15, 9, 210), 0 0 20px rgb(15, 9, 210), 0 0 30px rgb(15, 9, 210), 0 0 40px rgb(15, 9, 210), 0 0 50px rgb(15, 9, 210);
+}
+
+.cell.o::before {
+    content: "O";
+    color: rgb(237, 11, 11);
+    text-shadow: 0 0 10px rgb(237, 11, 11), 0 0 20px rgb(237, 11, 11), 0 0 30px rgb(237, 11, 11), 0 0 40px rgb(237, 11, 11), 0 0 50px rgb(237, 11, 11);
+}
+
+.cell.win {
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px #06011d, 0 0 30px #06011d, 0 0 40px #06011d;
+    }
+    to {
+        box-shadow: 0 0 30px #06011d, 0 0 40px #06011d, 0 0 50px #06011d;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #000;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    color: #06011d;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #06011d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes buffering {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#restartButton.buffering {
+    animation: buffering 1s linear infinite;
+}

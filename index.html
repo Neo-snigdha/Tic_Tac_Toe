@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Leaderboard</h2>
+        <p>Total Games: <span id="totalGames">0</span></p>
+        <p>Player X Wins: <span id="playerXWins">0</span></p>
+        <p>Player O Wins: <span id="playerOWins">0</span></p>
+        <p>Ties: <span id="ties">0</span></p>
+        <button id="restartButton">Restart Game</button>
+        <button id="settingsButton">Settings</button>
+    </div>
+    <div class="board" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Settings</h2>
+            <label>
+                <input type="radio" name="mode" value="pvp" checked> Player vs Player
+            </label>
+            <label>
+                <input type="radio" name="mode" value="pva"> Player vs AI
+            </label>
+        </div>
+    </div>
+    <audio id="xSound" src="x-sound.mp3"></audio>
+    <audio id="oSound" src="o-sound.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
