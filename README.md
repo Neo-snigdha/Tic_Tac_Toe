@@ -21,6 +21,6 @@ If all nine cells are filled and neither player has three in a row, the game is 
 
 # you can view the live preview here
 
-https://developer-snigdha.github.io/PRODIGY_WD_03/
+https://Neo-snigdha.github.io/PRODIGY_WD_03/
 
 ----------------------------------
