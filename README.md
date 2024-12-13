@@ -19,8 +19,4 @@ Players take turns to place their symbol in an empty cell.
 The first player to align three of their symbols vertically, horizontally, or diagonally wins.
 If all nine cells are filled and neither player has three in a row, the game is a draw.
 
-# you can view the live preview here
-
-https://Neo-snigdha.github.io/PRODIGY_WD_03/
-
 ----------------------------------
